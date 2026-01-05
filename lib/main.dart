@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/about_page.dart';
+import 'package:myapp/display_page.dart';
 import 'package:myapp/welcome_page.dart';
 
 void main() {
@@ -13,8 +14,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const WelcomePage(),
+        '/about': (context) => const AboutPage(),
+         '/display': (context) =>  DisplayPage(
+            name: '',
+         ),
+      },
       
-      home: WelcomePage()
     );
   }
 }
