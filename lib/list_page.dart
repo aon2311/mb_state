@@ -1,37 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/about_page.dart';
 import 'package:myapp/catalog_product.dart';
-
+import 'package:myapp/detail.dart';
 
 class ListPage extends StatelessWidget {
-  ListPage({super.key});
-  /*final List<String> products =<String>[
-    'Water Filter ',
-    'Brown',
-    'Filter 3 steps',
-    'Smart Robot Car',
-    'Remote'
-  ];*/
+  const ListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ListView'),
-        backgroundColor: Colors.green[200],
+        title: const Text('ListView'),
+        backgroundColor: Colors.green,
       ),
       body: ListView.separated(
-        itemCount:  CatalogProducts.item.length,
-        itemBuilder: (context,index)=>ListTile(
-          leading: Image.network(
-            CatalogProducts.item[index].imageUrl,
-          ),
-          title: Text(
-            CatalogProducts.item[index].title
-          ),
-          subtitle: Text(CatalogProducts.item[index].title),
-        ),
-        separatorBuilder :(context,index)=>Divider()
+        itemCount: CatalogProducts.item.length,
+        itemBuilder: (context, index) {
+          final product = CatalogProducts.item[index];
+
+          return ListTile(
+            leading: Image.network(product.imageUrl),
+            title: Text(product.title),
+
+            subtitle: Text(product.desc),
+            onTap: () {
+              Navigator.pushNamed(context,'/detail',arguments: product );
+            },
+          );
+        },
+        separatorBuilder: (context, index) => const Divider(),
       ),
     );
   }
