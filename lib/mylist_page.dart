@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'detail_page.dart';
-import 'models/product.dart';
+import 'model/product.dart';
 import 'services/http_service.dart';
 
 class MyListPage extends StatefulWidget {
@@ -15,7 +15,7 @@ class MyListPage extends StatefulWidget {
 class _MyListPageState extends State<MyListPage> {
   HttpService httpService = HttpService();
 
-  String baseUrl = 'https://itpart.net/mobile/api/'; // API json
+  String baseUrl = 'https://itpart.net/mobile/api/products.php'; // API json
   String baseImgUrl = 'https://itpart.net/mobile/images/'; // base Image
 
   @override
