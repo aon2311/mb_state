@@ -34,12 +34,7 @@ class _DetailPageState extends State<DetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.amberAccent,
-        title: const Text('Detail Page'),
-      ),
-      body: Center(
+    return  Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -73,7 +68,7 @@ class _DetailPageState extends State<DetailPage> {
             ],
           ),
         ),
-      ),
-    );
+      );
+    
   }
 }

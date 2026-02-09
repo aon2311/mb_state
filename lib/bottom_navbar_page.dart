@@ -2,6 +2,9 @@
 // must be stateful because of updating index tab
 
 import 'package:flutter/material.dart';
+import 'package:myapp/about_page.dart';
+import 'package:myapp/detail_page.dart';
+import 'package:myapp/mylist_page.dart';
 
 
 class BottomNavBarPage extends StatefulWidget {
@@ -15,13 +18,16 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
   int _selectedIndex = 0;
 
   static const List<Widget> _widgetPages = [
-    Text('Home'),
-    Text('Search'),
-    Text('Profile'),
+    MyListPage(),
+     AboutPage(),
+     //Page2(),
+     DetailPage()
+    //Text('Search'),
+    //Text('Profile'),
     // HttpBasic(),
     // WelcomePage(),
     // AboutUsPageForBottomNavBar(),
-    // Page1(),
+    
   ];
 
   void _onItemTapped(int index) {

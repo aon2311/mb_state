@@ -21,12 +21,7 @@ class _MyListPageState extends State<MyListPage> {
   @override
   Widget build(BuildContext context) {
     // debugPrint("myapp: $baseUrl & $baseImgUrl");
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.amberAccent,
-        title: const Text('My App'),
-      ),
-      body: Center(
+    return  Center(
         child: FutureBuilder(
           future: httpService.fetchData(strUrl: baseUrl),
           builder: (context, snapshot) {
@@ -52,7 +47,7 @@ class _MyListPageState extends State<MyListPage> {
             }
           },
         ),
-      ),
+      
     );
   }
 }
