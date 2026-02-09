@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp/about_page.dart';
 import 'package:myapp/detail_page.dart';
 import 'package:myapp/display_page.dart';
+import 'package:myapp/my_homepage_sharedpref.dart';
 import 'package:myapp/mylist_page.dart';
 import 'package:myapp/model/product.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         //'/': (context) => const DetailPage(),
-        '/': (context) => const MyListPage(),
+        '/': (context) => const MyHomePage(title: 'My Home Page'),
         '/about': (context) => const AboutPage(),
         '/display': (context) => const DisplayPage(name: ''),
         
